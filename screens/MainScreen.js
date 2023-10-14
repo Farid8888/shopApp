@@ -21,22 +21,25 @@ export default function MainScreen() {
     const expTime = eTime - new Date().getTime()
     const expirationTime = expireTime - new Date().getTime()
    console.log(expirationTime,expireTime,expiresIn)
-  // console.log(token,fetchedToken)
-    useEffect(async()=>{
-      if(!token){
+  console.log(token,fetchedToken,'tttoookkkkennn')
+    useEffect(()=>{
+      const sendReq=async()=>{
         try{
           await dispatch(getToken())
         }catch(e){
             throw e
         }
       }
+      if(!token){
+        sendReq()
+      }
            
                 setLoading(false)
            return ()=>{
              if(expiresIn){
-             dispatch(setLogOutTimer(expirationTime))
+             dispatch(setLogOutTimer(3600*1000))
              }else{
-               dispatch(setLogOutTimer(expTime))
+               dispatch(setLogOutTimer(3600*1000))
              }
            }
     },[dispatch,fetchedToken,token])

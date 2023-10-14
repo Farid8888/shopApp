@@ -137,7 +137,7 @@ const AdminDefaultFunction = (nav) => {
         </HeaderButtons>
       );
     },
-    headerTitle: "Your Products",
+    headerTitle: "Admin",
     headerRight: () => {
       return (
         <HeaderButtons HeaderButtonComponent={IoniconsHeaderButton}>
@@ -197,7 +197,6 @@ function ShopNavigator() {
       <Drawer.Navigator
         screenOptions={({ navigation }) => defaulFunction(navigation)}
         drawerContent={(props) => <CustomDrawerContent {...props} />}
-    
       >
         <Drawer.Screen
           name="Products"

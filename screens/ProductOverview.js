@@ -73,7 +73,7 @@ useEffect(()=>{
 
     return(
         <View style={styles.products}>
-           <FlatList data={products}  refreshControl={<RefreshControl onRefresh={loadProducts} refreshing={refresh}/>} keyExtractor={item=>item.id} renderItem={(itemData)=>{
+           <FlatList data={products}   refreshControl={<RefreshControl onRefresh={loadProducts} refreshing={refresh}/>} keyExtractor={item=>item.id} renderItem={(itemData)=>{
                return (
                <ProductsItem title={itemData.item.title} description={itemData.item.description} imageUrl={itemData.item.imageUrl} price={itemData.item.price} detailsHandler={()=>detailsHandler(itemData.item.id)}>
                     <Button title="View Details" color={Colors.primary} onPress={()=>detailsHandler(itemData.item.id)} />
