@@ -9,7 +9,6 @@ const initialState={
  userId:null,
  fetchedUserId:null
 }
-
 export const AuthReducer=(state=initialState,action)=>{
 switch(action.type){
  case SIGN_UP:
